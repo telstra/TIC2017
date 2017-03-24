@@ -17,12 +17,11 @@ TelstraIoT iotPlatform(host, tenant, username, password, appkey, &conn, &shield)
 
 void setup() {
   Serial.begin(115200);
-  while(Serial.available()==0); // Wait for serial character before starting
-  Serial.print("******* Waiting for shield *********");
+
+  while(!Serial); // Wait for serial character before starting
   shield.waitUntilShieldIsReady();
 
-
-
+  
   // Check if shield is connected to 4G network
   if(shield.isPDPContextActive()) {
       
@@ -33,12 +32,11 @@ void setup() {
      	  // Register device on IoT Platform
         Serial.println("############################ REGISTERING DEVICE #############################");
         char id[8];
-        const char* supportedMeasurements[3];
-        supportedMeasurements[0] = "XAcc";
-        supportedMeasurements[1] = "YAcc";
-        supportedMeasurements[2] = "ZAcc";
+        const char* supportedMeasurements[1];
+        supportedMeasurements[0] = "LightMeasurement";
+        //supportedMeasurements[0] = "Temperature";
     
-        int result = iotPlatform.registerDevice("Acc. Device", id, 8, supportedMeasurements, 1);
+        int result = iotPlatform.registerDevice("Light Device", id, 8, supportedMeasurements, 1);
     
         if(result<0) {
           Serial.println(F("Registration error."));

@@ -55,9 +55,9 @@ void loop() {
     char lightString[15];
     shield.getLightLevel(lightString);
     iotPlatform.sendMeasurement("LightMeasurement", "LightMeasurement", "Light level (lux)", lightString, "lux");
-    char tempString[15];
+    /*char tempString[15];
     shield.getTemperature(tempString);
     iotPlatform.sendMeasurement("TemperatureMeasurement", "TemperatureMeasurement", "Temperature (degrees Celsius)", tempString, "degrees Celsius");
-    
+    */
 }
 

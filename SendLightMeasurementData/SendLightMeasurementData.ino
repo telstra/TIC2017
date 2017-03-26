@@ -19,6 +19,9 @@ char password[32];
 void setup() {
   Serial.begin(115200);
   delay(500);
+
+  Serial.println(F("[START] Starting Send All Measurments Script"));
+  
   if(!shield.isShieldReady())
   {
      Serial.println("waiting for shield ...");
@@ -51,11 +54,25 @@ void setup() {
 
 void loop() {
     delay(1000);
-    Serial.println("############################ SENDING MEASUREMENT #############################");
     char lightString[15];
+    //char tempString[15];
+    
+    Serial.println("############################ Preparing to read MEASUREMENTS #############################");
+    //Read Light measurement from device
     shield.getLightLevel(lightString);
+    Serial.print(F("[    ] Light: "));
+    Serial.println(lightString);
+
+    /*
+    //Read temperature measurement from device
+    shield.getTemperature(tempString);
+    Serial.print(F("[    ] Temp: "));
+    Serial.println(tempString);
+    */
+
+    Serial.println("############################ Preparing to send MEASUREMENTS #############################");  
     iotPlatform.sendMeasurement("LightMeasurement", "LightMeasurement", "Light level (lux)", lightString, "lux");
-    /*char tempString[15];
+    /*
     shield.getTemperature(tempString);
     iotPlatform.sendMeasurement("TemperatureMeasurement", "TemperatureMeasurement", "Temperature (degrees Celsius)", tempString, "degrees Celsius");
     */

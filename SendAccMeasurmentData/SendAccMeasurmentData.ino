@@ -24,7 +24,8 @@ char az_string[10];
 void setup() {
   Serial.begin(115200);
   delay(500);
-  while(!Serial);
+
+  Serial.println(F("[START] Starting Send All Measurments Script"));
   
   if(!shield.isShieldReady())
   {
@@ -60,14 +61,22 @@ void setup() {
 
 void loop() {
     delay(2000);
-    Serial.println("############################ Preparing to send  MEASUREMENT #############################");
 
     float ax, ay, az; //scaled accelerometer values
 
+    Serial.println(F("############################ Preparing to send  MEASUREMENT #############################"));
+
     // read accelerometer measurements from device, scaled to the configured range
     CurieIMU.readAccelerometerScaled(ax, ay, az);
+      // convert to m/s^2
+    ax = ax*9.81;
+    ay = ay*9.81;
+    az = az*9.81;
+    Serial.print(F("[    ] AccX: "));
     Serial.println(ax);
+    Serial.print(F("[    ] AccY: "));
     Serial.println(ay);
+    Serial.print(F("[    ] AccZ: "));
     Serial.println(az);
 
     /*

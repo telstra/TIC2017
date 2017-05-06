@@ -2,7 +2,7 @@
 
 The Messaging API sends SMS messages to mobile devices in a single request. You can also query the status of a previously sent SMS message.
 
-The __first__ step to use the Telstra Messaging API is to create a developer account and apply for a new API key by __registering your application on the portal__ [sdev.telstra.com](https://sdev.telstra.com). This initial alpha release only allows the sending of SMS messages with a fixed outgoing callerID of  "TelstraAPI".
+The __first__ step to use the Telstra Messaging API is to create a developer account and apply for a new API key by __registering your application on the portal__ [sdev.telstra.com](https://sdev.telstra.com). Be sure to add the code _Innovation_ when registering! This initial alpha release only allows the sending of SMS messages with a fixed outgoing callerID of  "TelstraAPI".
 
 There is a limit of 1000 free SMS messages per month and 100 per day. If you would like more volume then contact us at t.dev@team.telstra.com
 

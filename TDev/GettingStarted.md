@@ -3,7 +3,7 @@
 
 The Messaging API provides the ability to send SMS messages to any mobile device.
 
-The first step to use the Telstra Messaging API is to create a developer account and apply for a new API key by registering your application on the portal.
+The first step to use the Telstra Messaging API is to create a developer account and apply for a new API key by registering your application on the portal [sdev.telstra.com](sdev.telstra.com).
 
 There is a limit of 1000 free SMS messages per month and 100 per day. If you would like more volume then contact us at [t.dev@team.telstra.com](t.dev@team.telstra.com)
 

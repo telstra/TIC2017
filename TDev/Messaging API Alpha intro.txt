@@ -6,6 +6,8 @@ The __first__ step to use the Telstra Messaging API is to create a developer ac
 
 There is a limit of 1000 free SMS messages per month and 100 per day. If you would like more volume then contact us at t.dev@team.telstra.com
 
+Alpha keys will be available Mon/Tues 
+
 ##Alpha release features
 
 For this alpha release we’ve included the following features;

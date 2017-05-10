@@ -21,7 +21,7 @@ CONSUMER_SECRET="your consumer secret"
 
 curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' \
   -d 'grant_type=client_credentials&client_id=$CONSUMER_KEY&client_secret=CONSUMER_SECRET&scope=NSMS' \
-  'https://sapi.telstra.com/v1/oauth/token'
+  'https://beta-sapi.telstra.com/v1/oauth/token'
 ```
 
 ### Response
@@ -35,7 +35,7 @@ curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' \
 
 ## Sending a message
 
-It is possible to send a message with a simple post to http://sapi.telstra.com/v2/messaging/SMS as demonstrated below
+It is possible to send a message with a simple post to http://beta-sapi.telstra.com/v2/messaging/SMS as demonstrated below
 
 ```sh
 #!/bin/bash
@@ -48,7 +48,7 @@ Dest="Destination number"
 curl -X post -H "Authorization: Bearer $AccessToken" \
   -H "Content-Type: application/json" \
   -d '{ "to":"$Dest", "body":"Test Message" }' \
-  https://sapi.telstra.com/v2/messaging/sms/
+  https://beta-sapi.telstra.com/v2/messaging/sms/
 ```
 
 A number of parameters can be used in this call, these are;
@@ -137,7 +137,7 @@ MessageId="Previous supplied Message Id, URL encoded"
 
 curl -X get -H "Authorization: Bearer $AccessToken" \
   -H "Content-Type: application/json" \
-  "https://sapi.telstra.com/v2/messaging/sms/$MessageId"
+  "https://beta-sapi.telstra.com/v2/messaging/sms/$MessageId"
 ```
 
 Note, the `MessageId` that appears in the URL must be URL encoded, just copying the message id as it was supplied when submitting the message won't work.

@@ -3,8 +3,9 @@
 The Messaging API provides the ability to send SMS messages to any mobile device.
 The first step to use the Telstra Messaging API is to create a developer account and apply for a new API key by registering your application on the portal.
 There is a limit of 1000 free SMS messages per month and 100 per day. If you would like more volume then contact us at [t.dev@team.telstra.com](t.dev@team.telstra.com)
+
 ## Authentication
-To get an OAuth 2.0 Authentication token, pass through your Consumer Key and Consumer Secret that you received when you registered for the Messages API key. The `grant_type` should be left as `client_credentials` and the scope as `NSMS`. The token will expire in one hour.
+To get an OAuth 2.0 Authentication token, pass through your Consumer Key and Consumer Secret that you received when you registered for the Messages API key. The `grant_type` should be left as `client_credentials` and the scope as `NSMS`. The token will expire in one hour. Get your keys by registering at our [Developer Portal](https://sdev.telstra.com/).
 ```sh
 #!/bin/bash
 # Obtain these keys from the Telstra Developer Portal
